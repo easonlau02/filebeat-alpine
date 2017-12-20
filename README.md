@@ -1,6 +1,7 @@
-# filebeat-alpine
-filebeat with alpine, more tiny, more lighter
+# Why to use [filebeat-alpine](https://github.com/easonlau02/filebeat-alpine)
+filebeat with alpine, more tiny, more lighter, only 16M disk cost.
 
+## Something to know when using [eason02/filebeat-alpine](https://hub.docker.com/r/eason02/filebeat-alpine/)
 ### 1. Make sure your application log path need to follow below or link to below path.
 ```
 PATH/applition/logs/*.log
