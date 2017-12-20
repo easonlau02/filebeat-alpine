@@ -4,7 +4,7 @@
 ## Something to know when using [eason02/filebeat-alpine](https://hub.docker.com/r/eason02/filebeat-alpine/)
 ### 1. Make sure your application log path need to follow below or link to below path.
 ```
-PATH/applition/logs/*.log
+PATH/application/logs/*.log
 ```
 
 ### 2. And change [docker-compose file](https://github.com/easonlau02/filebeat-alpine/blob/master/docker-compose.yml)
@@ -12,6 +12,8 @@ PATH/applition/logs/*.log
 volumes:
   - PATH:/home/user/ 
 ```
+
+Will auto-scan your log folder by this path: `PATH/`*/`logs`/`*.log`
 
 ### 3. Run via docker-compose
 ```
