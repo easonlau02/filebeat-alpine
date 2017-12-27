@@ -3,7 +3,7 @@ FROM alpine:3.6
 
 MAINTAINER Eason Lau <eason.lau02@hotmail.com>
 
-ENV FILEBEAT_VERSION=5.3.1
+ENV FILEBEAT_VERSION=5.6.3
 
 COPY ./config/filebeat.yml /
 
