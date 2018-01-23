@@ -1,0 +1,35 @@
+filebeat.prospectors:
+
+- type: log
+  paths:
+    - /home/user/*/logs/*.log
+  fields:
+    docType: app-logs
+
+  fields_under_root: true
+
+  document_type: app-logs
+
+  ignore_older: 24h
+
+- type: log
+  paths:
+    - /var/log/nginx/*.log
+  fields:
+    docType: nginx-logs
+
+  fields_under_root: true
+
+  document_type: nginx-logs
+
+  ignore_older: 24h
+
+fields:
+  env: ${env}
+  project: ${project}
+
+fields_under_root: true
+
+output.logstash:
+  hosts: ["${logstash}:5044"]
+  index: "logstash-%{+yyyy.MM.dd}"
