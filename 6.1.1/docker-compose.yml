@@ -1,8 +1,8 @@
 version: '2'
 services:
   filebeat:
-    image: eason02/filebeat-alpine-v2:6.1.1
-    container_name: filebeat-alpine-v2-6.1.1
+    image: eason02/filebeat-alpine:6.1.1
+    container_name: filebeat-alpine-6.1.1
     restart: always
     labels:
       io.rancher.container.pull_image: always
