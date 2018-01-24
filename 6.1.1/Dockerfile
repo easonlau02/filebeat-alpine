@@ -1,5 +1,5 @@
 # From base OS image
-FROM eason02/centos:7
+FROM alpine:3.6
 
 MAINTAINER Eason Lau <eason.lau02@hotmail.com>
 
@@ -7,12 +7,20 @@ ENV FILEBEAT_VERSION=6.1.1
 
 COPY ./config/filebeat.yml /
 
-RUN curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-${FILEBEAT_VERSION}-x86_64.rpm && \
-    rpm -vi filebeat-${FILEBEAT_VERSION}-x86_64.rpm && \
-    rm -f filebeat-${FILEBEAT_VERSION}-x86_64.rpm && \
-    rm /etc/filebeat/filebeat.yml && \
-    cp /filebeat.yml /etc/filebeat/
+RUN apk add --update-cache curl bash libc6-compat && \
+    rm -rf /var/cache/apk/* && \
+    curl https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-${FILEBEAT_VERSION}-linux-x86_64.tar.gz -o /filebeat.tar.gz && \
+    tar xzvf filebeat.tar.gz && \
+    rm filebeat.tar.gz && \
+    mv filebeat-${FILEBEAT_VERSION}-linux-x86_64 filebeat && \
+    cd filebeat && \
+    cp filebeat /usr/bin && \
+    rm -rf /filebeat/filebeat.yml && \
+    cp /filebeat.yml /filebeat/ && \
+    ls -ltr /filebeat && \
+    cat /filebeat/filebeat.yml
 
-VOLUME /var/lib/filebeat/
+VOLUME /filebeat/data
 
-CMD ["filebeat","-e"]
+WORKDIR /filebeat/
+CMD ["./filebeat","-e","-c", "filebeat.yml"]
