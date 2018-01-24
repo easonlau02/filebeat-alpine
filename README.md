@@ -4,6 +4,7 @@
 ## Supported tags and respective `Dockerfile` links
 -	[`5.3.1` (*Dockerfile*)](https://github.com/easonlau02/filebeat-alpine/blob/master/5.3.1/Dockerfile)
 -	[`5.6.3` (*Dockerfile*)](https://github.com/easonlau02/filebeat-alpine/blob/master/5.6.3/Dockerfile)
+-	[`6.1.1` (*Dockerfile*)](https://github.com/easonlau02/filebeat-alpine/blob/master/6.1.1/Dockerfile)
 
 ### Certainly, you have better to clone this git to your local for convenience.
 ```
