@@ -36,7 +36,7 @@ CONTAINER ID        IMAGE                           COMMAND                  CRE
 ```
 
 ## 为什么使用 [filebeat-alpine](https://github.com/easonlau02/filebeat-alpine)
-> 结合微服务和容器化的是想，将无关的、无用的资源去掉，封装成一个单一，纯净的image镜像，使用当前最轻量级的OS-alpine来封装filebeat，更轻量级，大小只有16M左右，方便快速启动
+> 结合微服务和容器化的思想，将无关的、无用的资源去掉，封装成一个单一，纯净的image镜像，使用当前最轻量级的OS-alpine来封装filebeat，更轻量级，大小只有16M左右，方便快速启动
 
 ### 当然，建议你将本git folder clone到你的本地方便后面启动service
 ```
