@@ -1,4 +1,5 @@
 # From base OS image
+# docker build -t eason02/filebeat-alpine:5.3.1
 FROM alpine:3.6
 
 MAINTAINER Eason Lau <eason.lau02@hotmail.com>
